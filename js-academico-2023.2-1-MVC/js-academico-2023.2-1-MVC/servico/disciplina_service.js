@@ -16,11 +16,9 @@ class DisciplinaService {
         return discplinaNova;
     }
 
-    inserirAlunoNaDisciplina(codigo, matricula){
-        const aluno = this.pesquisarPorMatricula(matricula);
-        const disciplina = this.pesquisarPorCodigo(codigo);
-
-        disciplina.arrayAlunos = aluno;
+    inserirAlunoNaDisciplina(aluno, codigo) {
+        const disciplinaPesquisada = this.pesquisarPorCodigo(codigo);
+        disciplinaPesquisada.inserirAluno(aluno);
     }
 
     pesquisarPorCodigo(codigo) {
